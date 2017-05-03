@@ -6,6 +6,7 @@ public class Objecto : MonoBehaviour {
 
 	public bool hover = false;
 	public bool click = false;
+	public bool clicked = false;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +16,10 @@ public class Objecto : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		click=Input.GetMouseButtonDown(0);
-		if (hover==true&&click==true){
-			Debug.Log("clicked");
+		if (hover == true && click == true) {
+			clicked = true;
+		} else if (hover == false) {
+			clicked = false;
 		}
 	}
 
